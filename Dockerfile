@@ -1,6 +1,3 @@
-# LinenTrack CRM v3
-FROM php:8.2-cli
-
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
@@ -15,8 +12,8 @@ COPY backend/ .
 
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-RUN mkdir -p storage/framework/sessions storage/framework/views storage/framework/cache storage/logs bootstrap/cache && chmod -R 777 storage bootstrap/cache
+RUN chmod -R 777 storage bootstrap/cache
 
 EXPOSE 8000
 
-CMD php /app/artisan migrate --seed --force && php /app/artisan serve --host=0.0.0.0 --port=$PORT
+CMD php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=$PORT
