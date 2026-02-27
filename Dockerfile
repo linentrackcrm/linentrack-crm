@@ -19,4 +19,4 @@ RUN mkdir -p storage/framework/sessions storage/framework/views storage/framewor
 
 EXPOSE 8000
 
-CMD php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=$PORT
+CMD php /app/artisan migrate --seed --force && php /app/artisan serve --host=0.0.0.0 --port=$PORT
