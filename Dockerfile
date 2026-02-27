@@ -1,6 +1,6 @@
 # LinenTrack CRM v3
 FROM php:8.2-cli
-...
+
 FROM php:8.2-cli
 
 RUN apt-get update && apt-get install -y \
